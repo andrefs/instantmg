@@ -46,7 +46,7 @@
 	    <script type="text/javascript">
 		function playSound(item){
 			var a = $('.escaxe',item)[0];
-			window.location.hash = a.id;
+			window.top.location.hash = a.id;
 			a.play();
 		}
 		function playSoundById(item_id){
@@ -56,7 +56,7 @@
 		}
 
 		$(window).load(function(){
-			var item_id = location.hash;
+			var item_id = window.top.location.hash;
 			if(item_id != "")
 				playSoundById(item_id);
 		});
