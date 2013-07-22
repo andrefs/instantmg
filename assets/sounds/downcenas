@@ -1,0 +1,18 @@
+#!/usr/bin/env perl
+
+use feature qw/say/;
+use Data::Dump qw/dump/;
+
+my ($url) 	= @ARGV;
+my $hash 	= {};
+
+say "URL '$url' doesn't match..." unless ($url =~ /^.*?v=(\w+).*?t=(\w+).*?$/);
+
+$hash->{vcode} = $1;
+$hash->{time}  = $2;
+$hash->{file}  = "$1.flv";
+
+
+
+
+
