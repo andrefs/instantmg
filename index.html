@@ -26,15 +26,22 @@
   </head>
 
   <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		    js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
  <div class="container">
-
-
-
             <header class="vspace">
                 <h1 class="">Instant MG</h1>
             </header>
 			<div class="row-fluid">
 				<div class="span12 share-row">
+					<div class="fb-like pull-right" data-href="http://empreentolinho.github.io/instantmg" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 					<a href="https://twitter.com/share" class="twitter-share-button pull-right" data-hashtags="instantmg">Tweet</a>
 				</div>
 			</div>
