@@ -53,6 +53,7 @@
 		function playNext(ids){
 			if(!ids) return;
 			var item_id = ids.shift();
+			item_id = item_id.replace(/^#/,'');
 			console.log(item_id);
 				var audio = $('#'+item_id)[0];
 				if(audio){
@@ -62,7 +63,6 @@
 		}
 
 		function playSoundsById(ids_string){
-			ids_string = ids_string.replace(/^#/,'');
 			ids = ids_string.split(',');
 			console.log(ids);
 			playNext(ids);
