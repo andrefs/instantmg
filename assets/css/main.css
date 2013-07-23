@@ -40,3 +40,7 @@ header h1 {
 footer {
 	margin-top: 100px;
 }
+
+.share-row {
+	height: 40px;
+}
