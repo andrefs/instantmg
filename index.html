@@ -44,24 +44,51 @@
   <script src="assets/js/bootstrap.min.js"></script>
 
 	    <script type="text/javascript">
+		var ids;
 		function playSound(item){
 			var a = $('.escaxe',item)[0];
 			window.top.location.hash = a.id;
 			a.play();
 		}
-		function playSoundById(item_id){
-			var audio = $(item_id)[0];
-			if(audio)
-				audio.play();
+		function playNext(ids){
+			if(!ids) return;
+			var item_id = ids.shift();
+			console.log(item_id);
+				var audio = $('#'+item_id)[0];
+				if(audio){
+					setInterval(function(){ playNext(ids); },1000*audio.duration+200);
+					audio.play();
+				}
+		}
+
+		function playSoundsById(ids_string){
+			ids_string = ids_string.replace(/^#/,'');
+			ids = ids_string.split(',');
+			console.log(ids);
+			playNext(ids);
 		}
 
 		$(window).load(function(){
 			var item_id = window.top.location.hash;
 			if(item_id != "")
-				playSoundById(item_id);
+				playSoundsById(item_id);
 		});
 		</script>
+
         
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-42664575-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
  </body>
 </html>
 
