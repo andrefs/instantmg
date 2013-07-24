@@ -56,8 +56,16 @@
   <script src="assets/js/jquery-1.10.2.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
 
-	    <script type="text/javascript">
+	<script type="text/javascript">
 		var ids;
+    var chars = 'qwertyuiopasdfghjklzxcvbnm1234567890+\'QWERTYUIOPASDFGHJKLZXCVBNM ';
+
+    $(document).on('keypress', function(e){
+      var index = chars.indexOf(String.fromCharCode(e.which));
+      console.log(typeof index);
+      // if(typeof index !== )
+    })
+
 		function playSound(item){
 			var a = $('.escaxe',item)[0];
 			window.top.location.hash = a.id;
