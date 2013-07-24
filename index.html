@@ -64,7 +64,7 @@
 			a.play();
 		}
 		function playNext(ids){
-			if(!ids) return;
+			if(!ids || !ids.length) return;
 			var item_id = ids.shift();
 			item_id = item_id.replace(/^#/,'');
 			console.log(item_id);
